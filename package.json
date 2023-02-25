@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "cypress": "^12.6.0"
+  },
+  "scripts": {
+    "build": "npm run lint",
+    "cy:verify": "cypress verify",
+    "cy:info": "cypress info",
+    "test:cy": "npx nps localhostTest"
+  }  
+}
