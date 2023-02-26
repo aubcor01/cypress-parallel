@@ -10,6 +10,7 @@ batch:
         variables:
           DIR:
             - "1"
+            - "2"
 phases:
   install:
     runtime-versions:
@@ -25,7 +26,7 @@ phases:
       - export COMMIT_INFO_SHA="$(git log -1 --pretty=%H)"
       - export COMMIT_INFO_REMOTE="$(git config --get remote.origin.url)"
       - npm install cypress --save-dev
-      #- yum install -y xorg-x11-server-Xvfb gtk2-devel gtk3-devel libnotify-devel GConf2 nss libXScrnSaver alsa-lib
+      - yum install -qy xorg-x11-server-Xvfb gtk2-devel gtk3-devel libnotify-devel GConf2 nss libXScrnSaver alsa-lib 
 #  pre_build:
 #    commands:
 #      - npm run cy:verify
@@ -34,4 +35,4 @@ phases:
     commands:
       #- npm run start:ci &
       #- npx cypress run --record
-      - npx cypress run --spec "cypress/e2e/${DIR}/spec.cy.js"
+      - npx cypress run --spec "cypress/e2e/${DIR}/*.cy.js"
