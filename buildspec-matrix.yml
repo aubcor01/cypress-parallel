@@ -9,8 +9,8 @@ batch:
       env:
         variables:
           DIR:
-            - "1"
-            - "2"
+            - "1/*.cy.js"
+            - "2/*.cy.js"
 phases:
   install:
     runtime-versions:
@@ -36,7 +36,7 @@ phases:
       #- npm run start:ci &
       #- npx cypress run --record
       - mkdirp ./cypress/reports/finalReports"
-      - npx cypress run --spec "cypress/e2e/${DIR}/*.cy.js"
+      - npx cypress run --spec "cypress/e2e/${DIR}"
       
 reports:
   TestFolder:
