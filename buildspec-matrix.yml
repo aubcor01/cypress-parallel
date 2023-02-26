@@ -1,5 +1,14 @@
 version: 0.2
 
+batch:
+  fast-fail: false
+  build-matrix:
+    static:
+      ignore-failure: false
+    dynamic:
+      env:
+        DIR:
+          - "1"
 phases:
   install:
     runtime-versions:
@@ -23,4 +32,4 @@ phases:
     commands:
       - npm run start:ci &
       #- npx cypress run --record
-      - npx cypress run --spec "cypress/e2e/1/spec.cy.js"
+      - npx cypress run --spec "cypress/e2e/1/${DIR}.cy.js"
