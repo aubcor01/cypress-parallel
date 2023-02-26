@@ -25,12 +25,13 @@ phases:
       - export COMMIT_INFO_SHA="$(git log -1 --pretty=%H)"
       - export COMMIT_INFO_REMOTE="$(git config --get remote.origin.url)"
       - npm install cypress --save-dev
+      - yum install -y xorg-x11-server-Xvfb gtk2-devel gtk3-devel libnotify-devel GConf2 nss libXScrnSaver alsa-lib
 #  pre_build:
 #    commands:
 #      - npm run cy:verify
 #      - npm run cy:info
   build:
     commands:
-      - npm run start:ci &
+      #- npm run start:ci &
       #- npx cypress run --record
       - npx cypress run --spec "cypress/e2e/1/${DIR}.cy.js"
