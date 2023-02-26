@@ -35,7 +35,7 @@ phases:
     commands:
       #- npm run start:ci &
       #- npx cypress run --record
-      - mkdirp ./cypress/reports/finalReports"
+      #- mkdirp ./cypress/reports/finalReports
       - npx cypress run --spec "cypress/e2e/${DIR}"
       
 reports:
