@@ -7,8 +7,9 @@ batch:
       ignore-failure: false
     dynamic:
       env:
-        DIR:
-          - "1"
+        variables:
+          DIR:
+            - "1"
 phases:
   install:
     runtime-versions:
