@@ -34,4 +34,4 @@ phases:
     commands:
       #- npm run start:ci &
       #- npx cypress run --record
-      - npx cypress run --spec "cypress/e2e/1/${DIR}.cy.js"
+      - npx cypress run --spec "cypress/e2e/${DIR}/spec.cy.js"
